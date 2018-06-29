@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './Header';
+import BeerList from './BeerList';
 
 function App(){
   return (
-    <Header/>
+    <div>
+      <Header />
+      <BeerList />
+    </div>
   );
 }
 
