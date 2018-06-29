@@ -22,3 +22,4 @@ if (module.hot) {
     render(App)
   });
 }
+// eslint-enable
