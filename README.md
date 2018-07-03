@@ -26,7 +26,7 @@ _Only authorized users should be able to add or edit kegs._
 
 ## Planned Component Structure
 
-https://photos.app.goo.gl/g4hLBPUjV89gnjmF6
+![picture](https://photos.app.goo.gl/g4hLBPUjV89gnjmF6)
 
 ## Setup/Installation Requirements
 
