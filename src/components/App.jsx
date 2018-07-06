@@ -24,6 +24,7 @@ class App extends React.Component {
     });
     this.setState({masterBeerList: newMasterBeerList});
     console.log(this.state.masterBeerList);
+    console.log(this.newMasterBeerList);
   }
 
   render() {
@@ -40,8 +41,9 @@ class App extends React.Component {
           `}
         </style>
         <Header />
+
         <Switch>
-          <Route exact path='/' component={BeerList} />
+          <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
           <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} />} />
           <Route component={Error404} />
         </Switch>
