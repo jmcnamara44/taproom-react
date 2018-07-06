@@ -10,20 +10,20 @@ function NewBeerForm(){
           placeholder='Beer Name'/>
         <input
           type='text'
-          id='name'
-          placeholder='Beer Name'/>
+          id='brewer'
+          placeholder='Brewer'/>
         <input
           type='text'
-          id='name'
-          placeholder='Beer Name'/>
+          id='price'
+          placeholder='Price'/>
         <input
           type='text'
-          id='name'
-          placeholder='Beer Name'/>
+          id='abv'
+          placeholder='ABV'/>
         <input
           type='text'
-          id='name'
-          placeholder='Beer Name'/>
+          id='poursLeft'
+          placeholder='Pours Left'/>
         <button type='submit'>Add Beer</button>
       </form>
     </div>

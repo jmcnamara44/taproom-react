@@ -10,13 +10,19 @@ class NewBeerControl extends React.Component {
     this.state = {
       formVisibleOnPage: false
     };
+    this.handleShowBeerForm = this.handleShowBeerForm.bind(this);
   }
+
+handleShowBeerForm(){
+  this.setState({formVisibleOnPage: true});
+}
+
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewBeerForm />
+      currentlyVisibleContent = <NewBeerForm />;
     } else {
-      currentlyVisibleContent = <AuthorizationQuestion />
+      currentlyVisibleContent = <AuthorizationQuestion onShowBeerForm={this.handleShowBeerForm} />;
     }
 
     return (
