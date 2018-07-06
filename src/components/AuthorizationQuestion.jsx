@@ -15,4 +15,5 @@ function AuthorizationQuestion(props){
 AuthorizationQuestion.propTypes = {
   onShowBeerForm: PropTypes.func
 };
- export default AuthorizationQuestion;
+
+export default AuthorizationQuestion;

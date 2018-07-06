@@ -13,9 +13,9 @@ class NewBeerControl extends React.Component {
     this.handleShowBeerForm = this.handleShowBeerForm.bind(this);
   }
 
-handleShowBeerForm(){
-  this.setState({formVisibleOnPage: true});
-}
+  handleShowBeerForm(){
+    this.setState({formVisibleOnPage: true});
+  }
 
   render(){
     let currentlyVisibleContent = null;
@@ -27,7 +27,6 @@ handleShowBeerForm(){
 
     return (
       <div>
-        <p onClick={this.props.onNewBeerCreation}>pppp</p>
         {currentlyVisibleContent}
       </div>
     );
@@ -36,6 +35,6 @@ handleShowBeerForm(){
 
 NewBeerControl.propTypes = {
   onNewBeerCreation: PropTypes.func
-}
+};
 
 export default NewBeerControl;

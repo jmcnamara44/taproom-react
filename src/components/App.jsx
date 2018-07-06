@@ -5,6 +5,7 @@ import {Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 import NewBeerControl from './NewBeerControl';
 import taproom from '../assets/images/taproom.jpg';
+import { v4 } from 'uuid';
 
 class App extends React.Component {
 
@@ -16,9 +17,15 @@ class App extends React.Component {
     this.handleNewBeerCreation = this.handleNewBeerCreation.bind(this);
   }
 
-  handleNewBeerCreation() {
-    console.log("handleNewBeerCreation works!");
+  handleNewBeerCreation(newBeer) {
+    var newBeerId = v4();
+    var newMasterBeerList = Object.assign({}, this.state.masterBeerList, {
+      [newBeerId]: newBeer
+    });
+    this.setState({masterBeerList: newMasterBeerList});
+    console.log(this.state.masterBeerList);
   }
+
   render() {
     return (
       <div>
