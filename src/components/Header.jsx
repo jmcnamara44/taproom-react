@@ -10,7 +10,7 @@ function Header(){
   return (
     <div style={headerStyles}>
       <h1>Taproom</h1>
-      <Link to="/">Home</Link> | <Link to="/newbeer">Add a New Beer</Link>
+      <Link to="/">Home</Link> | <Link to="/admin">Add a New Beer</Link>
     </div>
   );
 }
