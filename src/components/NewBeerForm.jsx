@@ -1,9 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewBeerForm(){
+function NewBeerForm(props){
+
+  function handleNewBeerFormSubmission(event) {
+    event.preventDefault();
+    console.log("form");
+    props.onNewBeerCreation();
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleNewBeerFormSubmission}>
         <input
           type='text'
           id='name'
@@ -28,6 +36,10 @@ function NewBeerForm(){
       </form>
     </div>
   );
+}
+
+NewBeerForm.propTypes = {
+  onNewBeerCreation: PropTypes.func
 }
 
 export default NewBeerForm;

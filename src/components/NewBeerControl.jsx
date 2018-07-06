@@ -20,17 +20,22 @@ handleShowBeerForm(){
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewBeerForm />;
+      currentlyVisibleContent = <NewBeerForm onNewBeerCreation={this.props.onNewBeerCreation} />;
     } else {
       currentlyVisibleContent = <AuthorizationQuestion onShowBeerForm={this.handleShowBeerForm} />;
     }
 
     return (
       <div>
+        <p onClick={this.props.onNewBeerCreation}>pppp</p>
         {currentlyVisibleContent}
       </div>
     );
   }
+}
+
+NewBeerControl.propTypes = {
+  onNewBeerCreation: PropTypes.func
 }
 
 export default NewBeerControl;

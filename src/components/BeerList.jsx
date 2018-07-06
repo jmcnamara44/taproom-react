@@ -3,21 +3,21 @@ import Beer from './Beer';
 
 var masterBeerList = [
   {
-    names: 'Stony Joe',
+    name: 'Stony Joe',
     brewer: 'Stony Creek',
     price: 6,
     abv: 5.5,
     poursLeft: 120
   },
   {
-    names: 'The Abider',
+    name: 'The Abider',
     brewer: 'Edmunds Oast',
     price: 6,
     abv: 12.1,
     poursLeft: 120
   },
   {
-    names: 'Pabst Blue Ribbon',
+    name: 'Pabst Blue Ribbon',
     brewer: 'Pabst Brewing Company',
     price: 3,
     abv: 5,
