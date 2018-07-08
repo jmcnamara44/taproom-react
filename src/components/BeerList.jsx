@@ -12,7 +12,9 @@ function BeerList(props){
           brewer={beer.brewer}
           price={beer.price}
           abv={beer.abv}
-          poursLeft={beer.poursLeft} />
+          poursLeft={beer.poursLeft}
+          key={beerId}
+          beerId={beerId} />;
       })}
     </div>
   );

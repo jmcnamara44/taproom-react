@@ -15,6 +15,7 @@ class App extends React.Component {
       masterBeerList: {}
     };
     this.handleNewBeerCreation = this.handleNewBeerCreation.bind(this);
+    this.testFunction = this.testFunction.bind(this);
   }
 
   handleNewBeerCreation(newBeer) {
@@ -23,8 +24,9 @@ class App extends React.Component {
       [newBeerId]: newBeer
     });
     this.setState({masterBeerList: newMasterBeerList});
+  }
+  testFunction() {
     console.log(this.state.masterBeerList);
-    console.log(this.newMasterBeerList);
   }
 
   render() {
@@ -41,7 +43,7 @@ class App extends React.Component {
           `}
         </style>
         <Header />
-
+        <p onClick={this.testFunction}>ppppppp</p>
         <Switch>
           <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
           <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} />} />
