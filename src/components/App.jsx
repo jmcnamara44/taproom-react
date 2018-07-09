@@ -29,10 +29,12 @@ class App extends React.Component {
 
   handlePourBeer(beerId) {
     var newMasterBeerList = Object.assign({}, this.state.masterBeerList);
-    // Object.keys(newMasterBeerList)
-    newMasterBeerList[beerId].poursLeft = newMasterBeerList[beerId].poursLeft - 1;
-    this.setState({masterBeerList: newMasterBeerList});
-    console.log(this.state.masterBeerList[beerId]);
+    if (newMasterBeerList[beerId].poursLeft > 0){
+      newMasterBeerList[beerId].poursLeft = newMasterBeerList[beerId].poursLeft - 1;
+      this.setState({masterBeerList: newMasterBeerList});
+    } else {
+      alert('this keg is tapped!');
+    }
   }
 
   render() {
