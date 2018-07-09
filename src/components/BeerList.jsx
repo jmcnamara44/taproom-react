@@ -14,7 +14,8 @@ function BeerList(props){
           abv={beer.abv}
           poursLeft={beer.poursLeft}
           key={beerId}
-          beerId={beerId} />;
+          beerId={beerId}
+          onPourBeer={props.onPourBeer} />;
       })}
     </div>
   );
@@ -22,6 +23,8 @@ function BeerList(props){
 
 BeerList.propTypes = {
   beerList: PropTypes.object,
+  onPourBeer: PropTypes.func,
+  selectedBeer: PropTypes.object
 };
 
 export default BeerList;

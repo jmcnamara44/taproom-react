@@ -12,9 +12,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterBeerList: {}
+      masterBeerList: {},
+      selectedBeer: null
     };
     this.handleNewBeerCreation = this.handleNewBeerCreation.bind(this);
+    this.handlePourBeer = this.handlePourBeer.bind(this);
   }
 
   handleNewBeerCreation(newBeer) {
@@ -25,23 +27,28 @@ class App extends React.Component {
     this.setState({masterBeerList: newMasterBeerList});
   }
 
+  handlePourBeer(beer) {
+    this.setState({selectedBeer: beer});
+    alert('selected beer is now: ' + this.state.selectedBeer);
+  }
+
   render() {
     return (
       <div>
         <style global jsx>{`
           body {
-            background-image: url(${taproom});
-            background-repeat: no-repeat;
-            background-position: 50% 30%;
-            background-size: 30%;
+            // background-image: url(${taproom});
+            // background-repeat: no-repeat;
+            // background-position: 50% 30%;
+            // background-size: 30%;
             background-color: grey;
-
           }
           `}
         </style>
         <Header />
         <Switch>
-          <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
+          <Route exact path='/' render={(props)=><BeerList beerList={this.state.masterBeerList} onPourBeer={this.handlePourBeer}
+          selectedBeer={this.state.selectedBeer} />} />
           <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} />} />
           <Route component={Error404} />
         </Switch>
