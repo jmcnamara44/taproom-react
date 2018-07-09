@@ -10,12 +10,11 @@ function NewBeerForm(props){
 
   function handleNewBeerFormSubmission(event) {
     event.preventDefault();
-    props.onNewBeerCreation({name: _name.value, brewer: _brewer.value, price: _price.value, abv: _abv.value, poursLeft: _poursLeft.value});
+    props.onNewBeerCreation({name: _name.value, brewer: _brewer.value, price: _price.value, abv: _abv.value, poursLeft: props.kegPours});
     _name.value = '';
     _brewer.value = '';
     _price.value = '';
     _abv.value = '';
-    _poursLeft.value = '';
   }
 
   return (
@@ -41,11 +40,6 @@ function NewBeerForm(props){
           id='abv'
           placeholder='ABV'
           ref={(input) => {_abv = input;}}/><br/>
-        <input
-          type='text'
-          id='poursLeft'
-          placeholder='Pours Left'
-          ref={(input) => {_poursLeft = input;}}/><br/>
         <button type='submit'>Add Beer</button>
       </form>
     </div>
@@ -53,7 +47,8 @@ function NewBeerForm(props){
 }
 
 NewBeerForm.propTypes = {
-  onNewBeerCreation: PropTypes.func
+  onNewBeerCreation: PropTypes.func,
+  kegPours: PropTypes.number
 };
 
 export default NewBeerForm;

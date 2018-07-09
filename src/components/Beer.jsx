@@ -12,7 +12,7 @@ function Beer(props){
       <h4>Brewer: {props.brewer}</h4>
       <h4>Price ${props.price}</h4>
       <h4>ABV: {props.abv}%</h4>
-      <h4 onClick={() => {props.onPourBeer(props.name)}}>Pours Left: {props.poursLeft}</h4>
+      <h4>Pours Left: {props.poursLeft}</h4><button onClick={() => {props.onPourBeer(props.beerId);}}>Pour Beer</button>
     </div>
   );
 }
@@ -22,7 +22,7 @@ Beer.propTypes = {
   brewer: PropTypes.string,
   price: PropTypes.string,
   abv: PropTypes.string,
-  poursLeft: PropTypes.string,
+  poursLeft: PropTypes.number,
   beerId: PropTypes.string,
   onPourBeer: PropTypes.func
 };

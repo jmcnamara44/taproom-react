@@ -20,7 +20,7 @@ class NewBeerControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewBeerForm onNewBeerCreation={this.props.onNewBeerCreation} />;
+      currentlyVisibleContent = <NewBeerForm onNewBeerCreation={this.props.onNewBeerCreation} kegPours={this.props.kegPours} />;
     } else {
       currentlyVisibleContent = <AuthorizationQuestion onShowBeerForm={this.handleShowBeerForm} />;
     }
@@ -34,7 +34,8 @@ class NewBeerControl extends React.Component {
 }
 
 NewBeerControl.propTypes = {
-  onNewBeerCreation: PropTypes.func
+  onNewBeerCreation: PropTypes.func,
+  kegPours: PropTypes.number
 };
 
 export default NewBeerControl;

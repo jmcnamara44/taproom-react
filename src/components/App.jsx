@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterBeerList: {},
-      selectedBeer: null
+      kegPours: 120
     };
     this.handleNewBeerCreation = this.handleNewBeerCreation.bind(this);
     this.handlePourBeer = this.handlePourBeer.bind(this);
@@ -27,9 +27,12 @@ class App extends React.Component {
     this.setState({masterBeerList: newMasterBeerList});
   }
 
-  handlePourBeer(beer) {
-    this.setState({selectedBeer: beer});
-    alert('selected beer is now: ' + this.state.selectedBeer);
+  handlePourBeer(beerId) {
+    var newMasterBeerList = Object.assign({}, this.state.masterBeerList);
+    // Object.keys(newMasterBeerList)
+    newMasterBeerList[beerId].poursLeft = newMasterBeerList[beerId].poursLeft - 1;
+    this.setState({masterBeerList: newMasterBeerList});
+    console.log(this.state.masterBeerList[beerId]);
   }
 
   render() {
@@ -47,9 +50,8 @@ class App extends React.Component {
         </style>
         <Header />
         <Switch>
-          <Route exact path='/' render={(props)=><BeerList beerList={this.state.masterBeerList} onPourBeer={this.handlePourBeer}
-          selectedBeer={this.state.selectedBeer} />} />
-          <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} />} />
+          <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} onPourBeer={this.handlePourBeer} />} />
+          <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} kegPours={this.state.kegPours} />} />
           <Route component={Error404} />
         </Switch>
       </div>

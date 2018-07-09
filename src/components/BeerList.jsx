@@ -3,6 +3,7 @@ import Beer from './Beer';
 import PropTypes from 'prop-types';
 
 function BeerList(props){
+
   return (
     <div>
       <hr/>
@@ -23,8 +24,7 @@ function BeerList(props){
 
 BeerList.propTypes = {
   beerList: PropTypes.object,
-  onPourBeer: PropTypes.func,
-  selectedBeer: PropTypes.object
+  onPourBeer: PropTypes.func
 };
 
 export default BeerList;
