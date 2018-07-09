@@ -15,7 +15,6 @@ class App extends React.Component {
       masterBeerList: {}
     };
     this.handleNewBeerCreation = this.handleNewBeerCreation.bind(this);
-    this.testFunction = this.testFunction.bind(this);
   }
 
   handleNewBeerCreation(newBeer) {
@@ -25,25 +24,22 @@ class App extends React.Component {
     });
     this.setState({masterBeerList: newMasterBeerList});
   }
-  testFunction() {
-    console.log(this.state.masterBeerList);
-  }
 
   render() {
     return (
       <div>
         <style global jsx>{`
           body {
-            // background-image: url(${taproom});
-            // background-repeat: no-repeat;
-            // background-position: center;
-            // background-size: 55%;
+            background-image: url(${taproom});
+            background-repeat: no-repeat;
+            background-position: 50% 30%;
+            background-size: 30%;
             background-color: grey;
+
           }
           `}
         </style>
         <Header />
-        <p onClick={this.testFunction}>ppppppp</p>
         <Switch>
           <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
           <Route path='/admin' render={()=><NewBeerControl onNewBeerCreation={this.handleNewBeerCreation} />} />
